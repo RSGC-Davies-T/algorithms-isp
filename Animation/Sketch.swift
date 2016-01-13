@@ -16,6 +16,8 @@ class Sketch {
     
     // Declare any properties you need for your sketch below this comment, but before init()
     var x = 0
+     var y = 0
+    var d = 0
     var s = 1
 
     // This runs once, equivalent to setup() in Processing
@@ -36,8 +38,8 @@ class Sketch {
         x = x + s
         
         // Bounce when hitting wall
-        if (x > canvas.width || x < 0) {
-            s *= -1
+        if (y > canvas.height || y < 0) {
+            d *= -1
         }
         
         // Clear the background
@@ -48,7 +50,7 @@ class Sketch {
         // Draw a circle that moves across the screen
         canvas.drawShapesWithBorders = false
         canvas.fillColor = Color(hue: Float(canvas.frameCount), saturation: 80, brightness: 90, alpha: 100)
-        canvas.drawEllipse(centreX: x, centreY: canvas.height / 2, width: 900, height: 900)
+        canvas.drawEllipse(centreX: x, centreY: canvas.height / 2, width: 91, height: 91)
         
     }
     
